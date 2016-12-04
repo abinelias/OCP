@@ -1,0 +1,132 @@
+<slick dots=true infinite=false speed=300 slides-to-show=5 touch-move=false slides-to-scroll=1>
+    <div class ="rcorners1">Abin</div>
+    <div class ="rcorners1">Silpa</div>
+    <div class ="rcorners1">Regi</div>
+    <div class ="rcorners1">Rajish</div>
+    <div class ="rcorners1">Ajay</div>
+    <div class ="rcorners1">Anjay</div>
+    <div class ="rcorners1">Subeesh</div>
+  </slick>
+<div class="row" ng-show="!profile.isEdit">    
+    <div class="col-sm-1 col-md-2">
+         <img src="https://secure.gravatar.com/avatar/de9b11d0f9c0569ba917393ed5e5b3ab?s=140&r=g&d=mm" class="img-circle">
+    </div>
+    <div class="col-sm-9 col-md-8">
+        <h4>
+            {{profile.userInfo.FirstName}} {{profile.userInfo.LastName}}</h4>
+        <small><cite title="San Francisco, USA"><i class="glyphicon glyphicon-map-marker">{{profile.userInfo.AddressLine1}},{{profile.userInfo.AddressLine2}} 
+        </i></cite></small>
+        <p>
+            <i class="glyphicon glyphicon-envelope"></i>email@example.com
+            <br />
+            <i class="glyphicon glyphicon-globe"></i><a href="http://www.jquery2dotnet.com">www.jquery2dotnet.com</a>
+            <br />
+            <i class="glyphicon glyphicon-gift"></i>June 02, 1988</p>
+        <!-- Split button -->
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary">
+                Social</button>
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span><span class="sr-only">Social</span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Twitter</a></li>
+                <li><a href="https://plus.google.com/+Jquery2dotnet/posts">Google +</a></li>
+                <li><a href="https://www.facebook.com/jquery2dotnet">Facebook</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Github</a></li>
+            </ul>
+        </div>
+        
+    </div>
+    <div class="col-sm-2 col-md-2">
+        <button class="btn btn-primary" ng-click="profile.EditClick()">Edit</button>
+    </div>
+</div>
+
+<div class="row" ng-show="profile.isEdit">
+      <!-- left column -->
+      <div class="col-md-3">
+        <div class="text-center">
+          <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+          <h6>Upload a different photo...</h6>
+          
+          <input type="file" class="form-control">
+        </div>
+      </div>
+      
+      <!-- edit form column -->
+      <div class="col-md-9 personal-info">
+        <div class="alert alert-info alert-dismissable">
+          <a class="panel-close close" data-dismiss="alert">×</a> 
+          <i class="fa fa-coffee"></i>
+          This is an <strong>.alert</strong>. Use this to show important messages to the user.
+        </div>
+        <h3>Personal info</h3>
+        
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">First name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="Jane" ng-model = "profile.userInfo.FirstName">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Last name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="Bishop" ng-model = "profile.userInfo.LastName">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Age:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="" ng-model = "profile.userInfo.Age">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Address Line1:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="" ng-model = "profile.userInfo.AddressLine1">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Address Line2:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="" ng-model = "profile.userInfo.AddressLine2">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Email:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="janesemail@gmail.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Username:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="janeuser" ng-model = "profile.userInfo.UserName">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Password:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="password" value="11111122333" ng-model = "profile.userInfo.Password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Confirm password:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="password" value="11111122333" ng-model = "profile.userInfo.Password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <input type="button" class="btn btn-primary" value="Update Changes" ng-click="profile.update()">
+              <span></span>
+              <input type="reset" class="btn btn-default" value="Cancel">
+            </div>
+          </div>
+        </form>
+      </div>
+  </div>
